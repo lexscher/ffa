@@ -2,7 +2,7 @@ console.log('running');
 // grab the body
 let body = document.querySelector('body');
 // User log in state
-let userLoggedIn = false;
+let userLoggedIn = true;
 // Navigation bar
 let nav;
 // main body
@@ -39,18 +39,22 @@ function navClickEventListener() {
   body.addEventListener('click', event => {
     // if our target is the home button
     // debugger;
-    if (event.target === nav.homeButton) {  // Home Button
+    if (event.target === nav.homeButton) {
+      // Home Button
       // set app state
       let appState = event.target.innerText;
       // toggle the state of our main component
       main.toggleAppState(appState);
-    } else if (event.target === nav.profileButton) { // Profile Button
+    } else if (event.target === nav.profileButton) {
+      // Profile Button
       let appState = event.target.innerText;
       main.toggleAppState(appState);
-    } else if (event.target === nav.athleteButton) { // Athletes Button
+    } else if (event.target === nav.athleteButton) {
+      // Athletes Button
       let appState = event.target.innerText;
       main.toggleAppState(appState);
-    } else if (event.target === nav.linkToRegisterButton) { // Link to Register Page Button
+    } else if (event.target === nav.linkToRegisterButton) {
+      // Link to Register Page Button
       // set app state
       let appState = 'registration-page';
       // toggle the state of the landing page
@@ -59,7 +63,8 @@ function navClickEventListener() {
       nav.isLoggingIn = false;
       // call the logInOrRegister
       nav.logInOrRegister();
-    } else if (event.target === nav.linkToLogInButton) { // Link to Log In Page Button
+    } else if (event.target === nav.linkToLogInButton) {
+      // Link to Log In Page Button
       // set app state
       let appState = 'login-page';
       // change the state of the main page
