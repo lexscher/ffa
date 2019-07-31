@@ -85,7 +85,7 @@ class LoggedInNav extends Nav {
     this.athleteButton.classList.add('btn');
     this.athleteButton.innerText = 'Athletes';
     this.loginButton.classList.add('btn');
-    this.loginButton.innerText = 'Login';
+    this.loginButton.innerText = 'Log Out';
     console.log(this.navBar);
     console.log('render nav bar buttons');
   }
