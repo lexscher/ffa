@@ -17,11 +17,12 @@ class HomePage {
     this.routinesControllerContainer.classList.add(
       'routines-controller-container'
     );
-    this.routineListContainer.classList.add('routine-list-container');
+    this.routineListContainer.classList.add('routines-list-container');
 
     // Add the inner HTML
     // this.routinesControllerContainer.innerHTML = '<p>Filter</p>';
+    // this.routineListContainer.innerHTML = '<p>Routines List</p>';
     this.routinesController = new RoutinesController();
-    this.routineListContainer.innerHTML = '<p>Routines List</p>';
+    this.routinesList = new RoutinesList();
   }
 }
