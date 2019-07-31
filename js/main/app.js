@@ -63,6 +63,38 @@ class App {
     this.hideMainDivChildren();
     let currentPage = document.querySelector(`.${pageName}`);
     currentPage.classList.remove('div--hidden');
-    currentPage.innerText = pageName;
+    // currentPage.innerText = pageName;
+    if (currentPage === "home") {
+      let homePage = new HomePage(currentPage)
+    } else if (currentPage === "athletes") {
+      // use the athletes page class
+    } else if (currentPage === "profile") {
+      // use the profile page class
+    } else if (currentPage === "logout") {
+      // delete the current user, switch to landing page class
+    }
   }
+}
+
+class HomePage {
+  constructor(currentPage) {
+    this.currentPage = currentPage
+    this.routinesController = document.createElement('div')
+    this.routines = document.createElement('div')
+    this.currentPage.append(this.routinesController)
+    this.currentPage.append(this.routines)
+    this.routinesController.innerHTML = '<p>Filter</p>'
+    this.routines.innerHTML = '<p>Routines List</p>'
+  }
+
+}
+
+class ProfilePage {
+
+
+}
+
+class AthletesPage {
+
+
 }
