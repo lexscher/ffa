@@ -1,0 +1,55 @@
+/* MAIN COLORS
+ORANGE - #EA5317
+LIGHT BLUE - #11B5E4
+BLUE - #1481BA
+GREEN - #26BF5B
+GRAY - #686D75
+*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Merriweather', serif;
+}
+
+/* Fonts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+.btn {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Button Styling */
+[class*='btn'] {
+  border-radius: 2%;
+  padding: 0.8rem, 0.6rem;
+  border: 0.5rem, solid, black;
+}
+/* Delete Button */
+[class*='btn--red'] {
+  background-color: red;
+}
+/*  */
+[class*='btn--blue'] {
+  background-color: #1481ba;
+}
+[class*='btn--light-blue'] {
+  background-color: #11b5e4;
+}
+
+[class*='btn--orange'] {
+  background-color: #ea5317;
+}
+[class*='btn--green'] {
+  background-color: #26bf5b;
+}
+
+/* Any Hide any element that contains a class with this flag */
+[class*='--hidden'] {
+  display: none;
+}
