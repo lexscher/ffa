@@ -21,6 +21,11 @@ class App {
     this.home.classList.add('home');
     this.profile.classList.add('profile');
     this.athletes.classList.add('athletes');
+
+    // Create our pages
+    this.homePage = new HomePage()
+    this.athletesPage = new AthletesPage()
+    this.profilePage = new ProfilePage()
   }
 
   // toggle for the state of the app
@@ -63,6 +68,16 @@ class App {
     this.hideMainDivChildren();
     let currentPage = document.querySelector(`.${pageName}`);
     currentPage.classList.remove('div--hidden');
-    currentPage.innerText = pageName;
+    // currentPage.innerText = pageName;
+    if (currentPage === 'home') {
+      // use the Home Page
+      let homePage = new HomePage(currentPage);
+    } else if (currentPage === 'athletes') {
+      // use the athletes page class
+    } else if (currentPage === 'profile') {
+      // use the profile page class
+    } else if (currentPage === 'logout') {
+      // delete the current user, switch to landing page class
+    }
   }
 }
