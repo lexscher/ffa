@@ -17,31 +17,46 @@ class LandingPageNav extends Nav {
     this.isLoggingIn = true;
     // create elements
     this.header = document.createElement('h1');
-    this.logInButton = document.createElement('button');
-    this.registerButton = document.createElement('button');
+    this.linkToLogInButton = document.createElement('button');
+    this.linkToRegisterButton = document.createElement('button');
 
     // append elements to nav bar
     this.navBar.append(this.header);
-    this.navBar.append(this.logInButton);
-    this.navBar.append(this.registerButton);
+    this.navBar.append(this.linkToLogInButton);
+    this.navBar.append(this.linkToRegisterButton);
+
+    // add class names to buttons
 
     // inner text for elements
     this.header.innerText = 'Fitness For All';
-    this.logInButton.innerText = 'Already got an account? Log In Here!';
-    this.registerButton.innerText = "Don't have an account? Register Here!";
+    this.linkToLogInButton.innerText = 'Already got an account? Log In Here!';
+    this.linkToRegisterButton.innerText =
+      "Don't have an account? Register Here!";
+
+    // give the buttons a value
+    this.linkToLogInButton.value = '';
   }
+
+  // hide all buttons
+  // hideNavButtons() {
+  //   this.linkToRegisterButton.classList.add('btn--hidden');
+  //   this.linkToLogInButton.classList.add('btn--hidden');
+  // }
 
   logInOrRegister() {
     // if the user is logging in
     if (this.isLoggingIn) {
       // display the log in form
       console.log(this.navBar);
-      this.logInButton.classList.add('btn--hidden');
+      // hide the button that that says 'Already got an account? Log In Here!'
+      this.linkToLogInButton.classList.add('btn--hidden');
+      this.linkToRegisterButton.classList.remove('btn--hidden');
     } else {
       console.log(this.navBar);
       // display the Registration form
       console.log('Register Here');
-      this.registerButton.classList.add('btn--hidden');
+      this.linkToRegisterButton.classList.add('btn--hidden');
+      this.linkToLogInButton.classList.remove('btn--hidden');
     }
   }
 }
