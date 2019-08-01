@@ -5,39 +5,42 @@ let body = document.querySelector('body');
 let currentUser = 'null';
 
 // master controller for the nav and main-body
+let page;
 
-// Navigation bar
-let nav;
-// main body
-let main;
+// // Navigation bar
+// let nav;
+// // main body
+// let main;
 
-// Make a navigation bar based on the user log in state
-// If user is logged in
-if (currentUser) {
-  // show logged in nav and main body
-  nav = new LoggedInNav();
-  main = new App();
-} else {
-  nav = new LandingPageNav();
-  main = new LandingPage();
-}
+// // Make a navigation bar based on the user log in state
+// // If user is logged in
+// if (currentUser) {
+//   // show logged in nav and main body
+//   nav = new LoggedInNav();
+//   main = new App();
+// } else {
+//   nav = new LandingPageNav();
+//   main = new LandingPage();
+// }
 
 document.addEventListener('DOMContentLoaded', event => {
-  nav.imHere();
+  page = new Page();
+  page.togglePageState();
+  // nav.imHere();
   // if we are logged in, render the nav bar buttons and run app
-  if (currentUser) {
-    nav.renderNavBarButtons();
-    main.toggleAppState('home');
-  } else {
-    // ELSE render our login/register nav, and show the landing page
-    nav.logInOrRegister();
-    main.toggleLandingPageState('login-page');
-  }
-  // add event listenrs
-  body.addEventListener('click', event => {
-    navClickEventListener(event);
-    homeClickEventListener(event);
-  });
+  // if (currentUser) {
+  //   nav.renderNavBarButtons();
+  //   main.toggleAppState('home');
+  // } else {
+  //   // ELSE render our login/register nav, and show the landing page
+  //   nav.logInOrRegister();
+  //   main.toggleLandingPageState('login-page');
+  // }
+  // // add event listenrs
+  // body.addEventListener('click', event => {
+  //   navClickEventListener(event);
+  //   homeClickEventListener(event);
+  // });
 });
 
 // Handle Nav Bar 'click' Event Listeners

@@ -1,7 +1,7 @@
 class LandingPage {
   constructor() {
     // Grab main div
-    this.main = document.querySelector('#main');
+    this.main = document.querySelector('#landing-page-container');
 
     // set the state
     this.state = 'login-page';
