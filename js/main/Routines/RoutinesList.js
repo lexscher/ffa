@@ -30,11 +30,17 @@ class RoutinesList {
     // append li to the routines list
     this.routinesList.append(routineListItem);
     // Give this a class name
-    this.routinesList.classList.add('routine-list-element');
+    routineListItem.classList.add('routine-list-element');
+    // give this a datasets for the routine's id and the athlete who created it's id
+    routineListItem.dataset.routineId = routineComponent.id;
+
     // give data to li based on the RoutineComponent's Data
     routineListItem.innerHTML = `
       <h3>${routineComponent.name}</h3>
-      <p>  by ${routineComponent.athleteName} </p>
+      <p class="routine-athlete-name" data-athlete-id="${
+        routineComponent.athleteId
+      }">  by ${routineComponent.athleteName} </p>
     `;
+    routineListItem.querySelector('h3').style.pointerEvents = 'none';
   };
 }
