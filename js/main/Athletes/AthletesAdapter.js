@@ -1,5 +1,5 @@
 class AthletesAdapter {
-// Get the url endpoint for athletes
+  // Get the url endpoint for athletes
   static url() {
     return 'http://localhost:3000/athletes/';
   }
@@ -7,6 +7,12 @@ class AthletesAdapter {
   // GET all athletes
   static async getAthletes() {
     const res = await fetch(this.url());
+    return await res.json();
+  }
+
+  // GET one athlete
+  static async getOneAthlete(id) {
+    const res = await fetch(this.url() + id);
     return await res.json();
   }
 
