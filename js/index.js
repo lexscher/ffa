@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', event => {
   // add event listenrs
   body.addEventListener('click', event => {
     navClickEventListener(event);
+    homeClickEventListener(event);
   });
 });
 
@@ -78,3 +79,7 @@ function navClickEventListener(event) {
   }
 }
 
+// Handle Home Page 'click' Event Listenrs
+function homeClickEventListener(event) {
+  debugger;
+}
