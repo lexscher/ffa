@@ -10,6 +10,12 @@ class RoutinesAdapter {
     return await res.json();
   }
 
+  // GET one routine
+  static async getOneRoutine(id) {
+    const res = await fetch(this.url() + id);
+    return await res.json();
+  }
+
   // set headers for requests
   static getHeaders() {
     return {
