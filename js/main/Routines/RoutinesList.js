@@ -36,5 +36,7 @@ class RoutinesList {
       <h3>${routineComponent.name}</h3>
       <p>  by ${routineComponent.athleteName} </p>
     `;
+    routineListItem.querySelector('h3').style.pointerEvents = 'none';
+    routineListItem.querySelector('p').style.pointerEvents = 'none';
   };
 }
