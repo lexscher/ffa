@@ -26,69 +26,69 @@ let page;
 document.addEventListener('DOMContentLoaded', event => {
   page = new Page();
   page.togglePageState();
-  // nav.imHere();
-  // if we are logged in, render the nav bar buttons and run app
-  // if (currentUser) {
-  //   nav.renderNavBarButtons();
-  //   main.toggleAppState('home');
-  // } else {
-  //   // ELSE render our login/register nav, and show the landing page
-  //   nav.logInOrRegister();
-  //   main.toggleLandingPageState('login-page');
-  // }
-  // // add event listenrs
-  // body.addEventListener('click', event => {
-  //   navClickEventListener(event);
-  //   homeClickEventListener(event);
-  // });
+  // add event listenrs
+  body.addEventListener('click', event => {
+    navClickEventListener(event);
+    homeClickEventListener(event);
+  });
 });
 
 // Handle Nav Bar 'click' Event Listeners
 function navClickEventListener(event) {
-  // Delegated Event Listenrs
+  // landing & app variables
+  let [navLanding, mainLanding, navApp, mainApp] = [
+    page.nav.landing,
+    page.main.landing,
+    page.nav.app,
+    page.main.app
+  ];
+  // debugger
+  /******** APP NAV EVENT HANDLERS ***********/
   // if our target is the home button
-  // debugger;
-  if (event.target === nav.homeButton) {
+  if (event.target === navApp.homeButton) {
     // Home Button
     // set app state
     let appState = event.target.innerText;
     // toggle the state of our main component
-    main.toggleAppState(appState);
+    mainApp.toggleAppState(appState);
     // toggle the state of the home page
-    main.homePage.swapState('index', '');
-  } else if (event.target === nav.profileButton) {
+    mainApp.homePage.swapState('index', '');
+  } else if (event.target === navApp.profileButton) {
     // Profile Button
     let appState = event.target.innerText;
-    main.toggleAppState(appState);
-  } else if (event.target === nav.athleteButton) {
+    mainApp.toggleAppState(appState);
+  } else if (event.target === navApp.athleteButton) {
     // Athletes Button
     let appState = event.target.innerText;
-    main.toggleAppState(appState);
-  } else if (event.target === nav.linkToRegisterButton) {
+    mainApp.toggleAppState(appState);
+    /******** LANDING NAV EVENT HANDLERS ***********/
+  } else if (event.target === navLanding.linkToRegisterButton) {
     // Link to Register Page Button
     // set app state
     let appState = 'registration-page';
     // toggle the state of the landing page
-    main.toggleLandingPageState(appState);
+    mainLanding.toggleLandingPageState(appState);
     // change the state of the landing page's nav bar
-    nav.isLoggingIn = false;
+    navLanding.isLoggingIn = false;
     // call the logInOrRegister
-    nav.logInOrRegister();
-  } else if (event.target === nav.linkToLogInButton) {
+    navLanding.logInOrRegister();
+  } else if (event.target === navLanding.linkToLogInButton) {
     // Link to Log In Page Button
     // set app state
     let appState = 'login-page';
     // change the state of the main page
-    main.toggleLandingPageState(appState);
+    mainLanding.toggleLandingPageState(appState);
     // change the state of the landing page's nav bar
-    nav.isLoggingIn = true;
+    navLanding.isLoggingIn = true;
     // call logInOrRegister
-    nav.logInOrRegister();
+    navLanding.logInOrRegister();
   }
 }
 
 // Handle Home Page 'click' Event Listenrs
 function homeClickEventListener(event) {
+  // landing & app variables
+  let [navApp, mainApp] = [page.nav.app, page.main.app];
   // if the event.target's class name is 'routine-list-element'
   if (event.target.classList.contains('routine-list-element')) {
     // get the routine's id from the dataset
@@ -97,7 +97,7 @@ function homeClickEventListener(event) {
     RoutinesAdapter.getOneRoutine(routineId).then(data => {
       // Use main to get into your home page, and use it's swapState method
       // pass it the 'show' state
-      main.homePage.swapState('show', data);
+      mainApp.homePage.swapState('show', data);
     });
 
     console.log('yes');

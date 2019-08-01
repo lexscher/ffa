@@ -33,7 +33,7 @@ class Page {
 
     /*--------------------------------*/
     // set the state
-    this.state = 'landing';
+    this.state = 'app';
 
     // Create the nav bars (landing page, and app)
     this.nav = {
@@ -73,7 +73,7 @@ class Page {
       this.landingPageContainer.classList.remove('div--hidden');
     } else if (this.state === 'app') {
       // Else show the app page, nav and all
-      this.loggedInPageNav.classList.remove('div--hidden');
+      this.appPageNav.classList.remove('div--hidden');
       this.appPageContainer.classList.remove('div--hidden');
     }
   }
