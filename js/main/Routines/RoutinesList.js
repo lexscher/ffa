@@ -16,19 +16,25 @@ class RoutinesList {
     RoutinesAdapter.getRoutines()
       .then(this.slapRoutinesOnDom.bind(this))
       .catch(err => console.log(err));
-    // Add content
-    // this.routinesList.innerHTML = `
-    // <li>routine 1</li>
-    // <li>routine 2</li>
-    // <li>routine 3</li>
-    // `;
   }
 
   slapRoutinesOnDom = routines => {
     routines.data.forEach(this.slapOneRoutineOnDom);
   };
 
-  slapOneRoutineOnDom = routine => {
-    console.log(routine);
+  slapOneRoutineOnDom = routineData => {
+    // Create a new routine instance with that data, and the item you want to append it to
+    let routineComponent = new Routine(routineData);
+    // Use this routine component to create a new li
+    let routineListItem = document.createElement('li');
+    // append li to the routines list
+    this.routinesList.append(routineListItem);
+    // Give this a class name
+    this.routinesList.classList.add('routine-list-element');
+    // give data to li based on the RoutineComponent's Data
+    routineListItem.innerHTML = `
+      <h3>${routineComponent.name}</h3>
+      <p>  by ${routineComponent.athleteName} </p>
+    `;
   };
 }
