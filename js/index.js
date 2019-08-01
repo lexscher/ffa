@@ -1,8 +1,11 @@
 console.log('running');
 // grab the body
 let body = document.querySelector('body');
-// User log in state
-let userLoggedIn = true;
+// User log in state - now Current User
+let currentUser = 'null';
+
+// master controller for the nav and main-body
+
 // Navigation bar
 let nav;
 // main body
@@ -10,7 +13,7 @@ let main;
 
 // Make a navigation bar based on the user log in state
 // If user is logged in
-if (userLoggedIn) {
+if (currentUser) {
   // show logged in nav and main body
   nav = new LoggedInNav();
   main = new App();
@@ -22,7 +25,7 @@ if (userLoggedIn) {
 document.addEventListener('DOMContentLoaded', event => {
   nav.imHere();
   // if we are logged in, render the nav bar buttons and run app
-  if (userLoggedIn) {
+  if (currentUser) {
     nav.renderNavBarButtons();
     main.toggleAppState('home');
   } else {
