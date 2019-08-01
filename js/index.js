@@ -31,48 +31,50 @@ document.addEventListener('DOMContentLoaded', event => {
     main.toggleLandingPageState('login-page');
   }
   // add event listenrs
-  navClickEventListener();
+  body.addEventListener('click', event => {
+    navClickEventListener(event);
+  });
 });
 
-function navClickEventListener() {
+// Handle Nav Bar 'click' Event Listeners
+function navClickEventListener(event) {
   // Delegated Event Listenrs
-  body.addEventListener('click', event => {
-    // if our target is the home button
-    // debugger;
-    if (event.target === nav.homeButton) {
-      // Home Button
-      // set app state
-      let appState = event.target.innerText;
-      // toggle the state of our main component
-      main.toggleAppState(appState);
-    } else if (event.target === nav.profileButton) {
-      // Profile Button
-      let appState = event.target.innerText;
-      main.toggleAppState(appState);
-    } else if (event.target === nav.athleteButton) {
-      // Athletes Button
-      let appState = event.target.innerText;
-      main.toggleAppState(appState);
-    } else if (event.target === nav.linkToRegisterButton) {
-      // Link to Register Page Button
-      // set app state
-      let appState = 'registration-page';
-      // toggle the state of the landing page
-      main.toggleLandingPageState(appState);
-      // change the state of the landing page's nav bar
-      nav.isLoggingIn = false;
-      // call the logInOrRegister
-      nav.logInOrRegister();
-    } else if (event.target === nav.linkToLogInButton) {
-      // Link to Log In Page Button
-      // set app state
-      let appState = 'login-page';
-      // change the state of the main page
-      main.toggleLandingPageState(appState);
-      // change the state of the landing page's nav bar
-      nav.isLoggingIn = true;
-      // call logInOrRegister
-      nav.logInOrRegister();
-    }
-  });
+  // if our target is the home button
+  // debugger;
+  if (event.target === nav.homeButton) {
+    // Home Button
+    // set app state
+    let appState = event.target.innerText;
+    // toggle the state of our main component
+    main.toggleAppState(appState);
+  } else if (event.target === nav.profileButton) {
+    // Profile Button
+    let appState = event.target.innerText;
+    main.toggleAppState(appState);
+  } else if (event.target === nav.athleteButton) {
+    // Athletes Button
+    let appState = event.target.innerText;
+    main.toggleAppState(appState);
+  } else if (event.target === nav.linkToRegisterButton) {
+    // Link to Register Page Button
+    // set app state
+    let appState = 'registration-page';
+    // toggle the state of the landing page
+    main.toggleLandingPageState(appState);
+    // change the state of the landing page's nav bar
+    nav.isLoggingIn = false;
+    // call the logInOrRegister
+    nav.logInOrRegister();
+  } else if (event.target === nav.linkToLogInButton) {
+    // Link to Log In Page Button
+    // set app state
+    let appState = 'login-page';
+    // change the state of the main page
+    main.toggleLandingPageState(appState);
+    // change the state of the landing page's nav bar
+    nav.isLoggingIn = true;
+    // call logInOrRegister
+    nav.logInOrRegister();
+  }
 }
+
