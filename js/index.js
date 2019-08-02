@@ -62,7 +62,14 @@ function navClickEventListener(event) {
     // Athletes Button
     let appState = event.target.innerText;
     mainApp.toggleAppState(appState);
-    mainApp.athletesPage.swapState('index', '')
+    mainApp.athletesPage.swapState('index', '');
+  } else if (event.target === navApp.logOutButton) {
+    // set the user to falsey value, null
+    currentUser = null;
+    // change the state of the page
+    page.state = 'landing';
+    // trigger the page toggler
+    page.togglePageState();
     /******** LANDING NAV EVENT HANDLERS ***********/
   } else if (event.target === navLanding.linkToRegisterButton) {
     // Link to Register Page Button
@@ -109,11 +116,9 @@ function homeClickEventListener(event) {
 function athleteClickEventListener(event) {
   let [navApp, mainApp] = [page.nav.app, page.main.app];
   if (event.target.classList.contains('btn-view-profile')) {
-    let athleteId = event.target.dataset.athleteId
-    AthletesAdapter.getOneAthlete(athleteId)
-    .then(data => {
-      mainApp.athletesPage.swapState('show', data)
-    })
+    let athleteId = event.target.dataset.athleteId;
+    AthletesAdapter.getOneAthlete(athleteId).then(data => {
+      mainApp.athletesPage.swapState('show', data);
+    });
   }
-  
 }
