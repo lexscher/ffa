@@ -8,14 +8,16 @@ header {
   justify-content: center;
 }
 
-header div.nav-bar {
+#nav-bar {
   height: inherit;
-  width: 100%;
+  width: inherit;
 }
 
-#landing-page-nav-container, #app-page-nav-container {
+#landing-page-nav-container,
+#app-page-nav-container {
+  height: inherit;
   width: inherit;
   display: flex;
-  // align-items: center;
-  justify-content: space-between
+  align-items: center;
+  justify-content: space-around;
 }
