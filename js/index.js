@@ -2,7 +2,7 @@ console.log('running');
 // grab the body
 let body = document.querySelector('body');
 // User log in state - now Current User
-let currentUser = 'null';
+let currentUser = null;
 
 // master controller for the nav and main-body
 let page;
