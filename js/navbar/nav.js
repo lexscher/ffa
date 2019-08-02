@@ -61,12 +61,12 @@ class LoggedInNav {
     this.homeButton = document.createElement('button');
     this.profileButton = document.createElement('button');
     this.athleteButton = document.createElement('button');
-    this.loginButton = document.createElement('button');
+    this.logOutButton = document.createElement('button');
     // append elements to nav bar
     this.navBar.append(this.athleteButton);
     this.navBar.append(this.homeButton);
     this.navBar.append(this.profileButton);
-    this.navBar.append(this.loginButton);
+    this.navBar.append(this.logOutButton);
   }
 
   renderNavBarButtons() {
@@ -76,8 +76,8 @@ class LoggedInNav {
     this.profileButton.innerText = 'Profile';
     this.athleteButton.classList.add('btn');
     this.athleteButton.innerText = 'Athletes';
-    this.loginButton.classList.add('btn');
-    this.loginButton.innerText = 'Log Out';
+    this.logOutButton.classList.add('btn');
+    this.logOutButton.innerText = 'Log Out';
     console.log(this.navBar);
     console.log('render nav bar buttons');
   }
