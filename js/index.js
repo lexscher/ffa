@@ -3,25 +3,7 @@ console.log('running');
 let body = document.querySelector('body');
 // User log in state - now Current User
 // let currentUser = null;
-let currentUser = {
-  id: '3',
-  type: 'athlete',
-  attributes: {
-    name: 'Jimmy Neutron',
-    username: 'jim',
-    email: 'gotta@blast.com',
-    password_digest: 'abc123',
-    friends: [
-      {
-        id: 2,
-        name: 'Timmy Turner',
-        username: 'tim',
-        email: 'I@wish.com',
-        password_digest: 'abc123'
-      }
-    ]
-  }
-};
+let currentUser = null;
 
 // master controller for the nav and main-body
 let page;
@@ -135,11 +117,11 @@ function athleteClickEventListener(event) {
 
     // toggle-swap add/Remove buttons
     page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
-  } 
+  }
   if (event.target.classList.contains('btn-remove-friend')) {
     // make request to destroy friendship
 
-      // toggle-swap add/Remove buttons
-      page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
+    // toggle-swap add/Remove buttons
+    page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
   }
 }

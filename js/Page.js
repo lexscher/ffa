@@ -33,7 +33,7 @@ class Page {
 
     /*--------------------------------*/
     // set the state to either 'landing' or 'app'
-    this.state = 'app';
+    this.state = 'landing';
 
     // Create the nav bars (landing page, and app)
     this.nav = {
