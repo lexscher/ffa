@@ -1,0 +1,31 @@
+// Main colors
+$color-primary: #327b8f;
+$color-primary-light: #11b5e4;
+$color-primary-dark: #0a3b49;
+
+$color-secondary: #ea5317;
+$color-secondary-light: #ea5317;
+$color-secondary-dark: #ea5317;
+
+$color-tertiary: #26bf5b;
+$color-tertiary-light: #85e7a7;
+$color-tertiary-dark: #0e4923;
+
+$color-gray: #686d75;
+$color-black: #070102;
+
+// fonts
+$default-font-header: 'Montserrat', sans-serif;
+$default-font-main: 'Merriweather', serif;
+
+$default-font-size: 1.6rem;
+$default-font-weight: 250;
+
+// SHADOW
+$shadow-primary: 5px 5px 5px $color-primary-dark;
+
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;

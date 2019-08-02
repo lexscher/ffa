@@ -46,7 +46,7 @@ class RoutinePage {
       // give inner HTML
       workoutCard.innerHTML = `
       <h2 class="workout-name">${name}</h2>
-      <ul class='workout-exercise-list'></ul>
+      <ul class='workout-exercise-list' id='workout-exercise-list-${id}'></ul>
       `;
       // loop through your exercises
       for (const exercise of exercises) {
@@ -54,7 +54,7 @@ class RoutinePage {
         let { id, name, reps, sets, workout_id } = exercise;
 
         // grab the ul that will hold our exercises
-        let exerciseList = document.querySelector('.workout-exercise-list');
+        let exerciseList = document.querySelector(`#workout-exercise-list-${workout_id}`);
 
         // create our exercise list item
         let exerciseListItem = document.createElement('li');

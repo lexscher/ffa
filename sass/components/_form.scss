@@ -1,0 +1,11 @@
+form {
+  width: 10rem;
+  margin: 2rem;
+  padding: 1.5rem;
+  align-self: center;
+  background-image: linear-gradient(
+    to left,
+    $color-secondary-light,
+    $color-primary-dark
+  );
+}
