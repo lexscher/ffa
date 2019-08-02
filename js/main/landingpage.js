@@ -85,6 +85,8 @@ class LoginForm {
         ) {
           // set the currentUser to the athlete
           currentUser = athlete;
+          page.state = 'app'
+          page.togglePageState()
           // stop execution
           return;
         }
