@@ -1,19 +1,66 @@
 /* MAIN COLORS */
 body {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: 'Merriweather', serif; }
+  align-items: center;
+  font-weight: 250;
+  font-size: 1.6rem;
+  background: #11b5e4;
+  color: #070102; }
 
-/* Fonts */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button,
-.btn {
-  font-family: 'Montserrat', sans-serif; }
+.nav-bar {
+  font-size: 70px;
+  padding: 5px;
+  color: #ea5317;
+  text-shadow: 3px 3px #0a3b49; }
+
+h1 {
+  font-family: "Montserrat", sans-serif; }
+
+h2 {
+  font-family: "Montserrat", sans-serif; }
+
+h3 {
+  font-family: "Montserrat", sans-serif; }
+
+h4 {
+  font-family: "Montserrat", sans-serif; }
+
+h5 {
+  font-family: "Montserrat", sans-serif; }
+
+h6 {
+  font-family: "Montserrat", sans-serif; }
+
+p {
+  font-family: "Merriweather", serif; }
+
+form {
+  display: flex;
+  flex-direction: column; }
+
+ul {
+  list-style: none; }
+
+ul.routines-list {
+  border: 0.4rem, solid, #686d75; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+/* Any Hide any element that contains a class with this flag */
+[class*='--hidden'] {
+  display: none !important; }
 
 /* Button Styling */
 [class*='btn'] {
@@ -27,7 +74,7 @@ button,
 
 /*  */
 [class*='btn--blue'] {
-  background-color: #11b5e4; }
+  background-color: #327b8f; }
 
 [class*='btn--light-blue'] {
   background-color: #11b5e4; }
@@ -38,6 +85,20 @@ button,
 [class*='btn--green'] {
   background-color: #26bf5b; }
 
-/* Any Hide any element that contains a class with this flag */
-[class*='--hidden'] {
-  display: none; }
+header {
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #ea5317;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+header div.nav-bar {
+  height: inherit;
+  width: 100%; }
+
+#landing-page-nav-container, #app-page-nav-container {
+  width: inherit;
+  display: flex;
+  justify-content: space-between; }

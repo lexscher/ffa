@@ -2,7 +2,26 @@ console.log('running');
 // grab the body
 let body = document.querySelector('body');
 // User log in state - now Current User
-let currentUser = null;
+// let currentUser = null;
+let currentUser = {
+  id: '3',
+  type: 'athlete',
+  attributes: {
+    name: 'Jimmy Neutron',
+    username: 'jim',
+    email: 'gotta@blast.com',
+    password_digest: 'abc123',
+    friends: [
+      {
+        id: 2,
+        name: 'Timmy Turner',
+        username: 'tim',
+        email: 'I@wish.com',
+        password_digest: 'abc123'
+      }
+    ]
+  }
+};
 
 // master controller for the nav and main-body
 let page;

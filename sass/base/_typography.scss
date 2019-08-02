@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: $default-font-weight;
+  font-size: $default-font-size;
+  background: $color-primary-light;
+  color: $color-black;
+}
+
+.nav-bar {
+  font-size: 70px;
+  padding: 5px;
+  color: $color-secondary-light;
+  text-shadow: 3px 3px $color-primary-dark;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-family: $default-font-header;
+  }
+}
+
+p {
+  font-family: $default-font-main;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+}
+
+ul.routines-list {
+  border: .4rem, solid, $color-gray;
+}

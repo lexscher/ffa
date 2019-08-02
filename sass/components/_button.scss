@@ -1,0 +1,24 @@
+/* Button Styling */
+[class*='btn'] {
+  border-radius: 2%;
+  padding: 0.8rem, 0.6rem;
+  border: 0.5rem, solid, $color-black;
+}
+/* Delete Button */
+[class*='btn--red'] {
+  background-color: red;
+}
+/*  */
+[class*='btn--blue'] {
+  background-color: $color-primary;
+}
+[class*='btn--light-blue'] {
+  background-color: $color-primary-light;
+}
+
+[class*='btn--orange'] {
+  background-color: $color-secondary;
+}
+[class*='btn--green'] {
+  background-color: $color-tertiary;
+}
