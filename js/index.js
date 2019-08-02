@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', event => {
     homeClickEventListener(event);
     athleteClickEventListener(event);
   });
+  temp();
 });
 
 // Handle Nav Bar 'click' Event Listeners
@@ -124,4 +125,9 @@ function athleteClickEventListener(event) {
     // toggle-swap add/Remove buttons
     page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
   }
+}
+
+// TEMP
+function temp() {
+  document.querySelector('.athletes').lastElementChild.remove();
 }

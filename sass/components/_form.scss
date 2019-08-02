@@ -3,9 +3,13 @@ form {
   margin: 2rem;
   padding: 1.5rem;
   align-self: center;
-  background-image: linear-gradient(
-    to left,
-    $color-secondary-light,
-    $color-primary-dark
-  );
+}
+
+input {
+  height: 1.5rem;
+  border: solid 0.4rem black;
+}
+
+input[type='submit'] {
+  height: 3.4rem !important;
 }

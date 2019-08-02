@@ -59,12 +59,26 @@ form {
   width: 10rem;
   margin: 2rem;
   padding: 1.5rem;
-  align-self: center;
-  background-image: linear-gradient(to left, #ea5317, #0a3b49); }
+  align-self: center; }
+
+input {
+  height: 1.5rem;
+  border: solid 0.4rem black; }
+
+input[type='submit'] {
+  height: 3.4rem !important; }
 
 /* Button Styling */
 button {
-  cursor: pointer; }
+  cursor: pointer;
+  height: 1.4rem;
+  padding: .4rem, .8rem; }
+
+.athlete-action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
 
 [class*='btn'] {
   border-radius: 2%;
@@ -88,8 +102,30 @@ button {
 [class*='btn--green'] {
   background-color: #26bf5b; }
 
-.routine-list-element {
-  background-color: #fff; }
+.routine-list-element, .athlete-list-item,
+div.athlete-show-card {
+  background-color: rgba(223, 181, 104, 0.774);
+  padding: .2rem;
+  margin-bottom: .5rem;
+  border-radius: .2rem;
+  border: solid 0.2rem #070102;
+  display: flex;
+  justify-content: space-around; }
+
+.routine-list-element h3, .athlete-info-card,
+div.athlete-show-card h2 {
+  margin-right: 5rem; }
+
+.athlete-list-item {
+  flex-direction: row-reverse; }
+
+.athlete-action-buttons {
+  display: flex; }
+
+div.athlete-show-card {
+  display: flex;
+  border: solid 2px #000;
+  margin-top: 10rem; }
 
 header {
   top: 0;
@@ -111,3 +147,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-around; }
+
+.home {
+  display: flex; }
+
+div.athlete-show-card {
+  display: flex !important; }
