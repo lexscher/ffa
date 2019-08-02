@@ -10,9 +10,5 @@ class RoutineController {
     this.singleRoutineShowPageContainer.append(this.routineController);
     // Give a class name
     this.routineController.classList.add('routine-controller');
-
-    // Inner HTML for testing
-    this.routineController.innerText =
-      'Routine Controller Edit & Delete button';
   }
 }

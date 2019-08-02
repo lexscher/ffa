@@ -1,57 +1,11 @@
 /* MAIN COLORS */
+@import './abstracts/variables';
 
-$color-primary: #11b5e4;
-$color-primary-light: #11b5e4;
-$color-secondary: #ea5317;
-$color-tertiary: #26bf5b;
+@import './base/typography';
+@import './base/utilities';
 
-$color-gray: #686d75;
-$color-black: #070102;
+@import './components/form';
+@import './components/button';
+@import './components/list';
 
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Merriweather', serif;
-}
-
-/* Fonts */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button,
-.btn {
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Button Styling */
-[class*='btn'] {
-  border-radius: 2%;
-  padding: 0.8rem, 0.6rem;
-  border: 0.5rem, solid, $color-black;
-}
-/* Delete Button */
-[class*='btn--red'] {
-  background-color: red;
-}
-/*  */
-[class*='btn--blue'] {
-  background-color: $color-primary;
-}
-[class*='btn--light-blue'] {
-  background-color: $color-primary-light;
-}
-
-[class*='btn--orange'] {
-  background-color: $color-secondary;
-}
-[class*='btn--green'] {
-  background-color: $color-tertiary;
-}
-
-/* Any Hide any element that contains a class with this flag */
-[class*='--hidden'] {
-  display: none;
-}
+@import './layout/header';
