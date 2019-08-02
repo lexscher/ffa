@@ -1,3 +1,29 @@
-.routine-list-element {
-  background-color: #fff;
+.routine-list-element, .athlete-list-item, 
+div.athlete-show-card {
+  background-color: rgba(223, 181, 104, 0.774);
+  padding: .2rem;
+  margin-bottom: .5rem;
+  border-radius: .2rem;
+  border: solid .2rem $color-black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.routine-list-element h3, .athlete-info-card, 
+div.athlete-show-card h2 {
+  margin-right: 5rem;
+}
+
+.athlete-list-item{
+  flex-direction: row-reverse;
+}
+
+.athlete-action-buttons {
+  display: flex;
+}
+
+div.athlete-show-card {
+  display: flex;
+  border: solid 2px #000;
+  margin-top: 10rem;
 }

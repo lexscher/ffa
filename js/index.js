@@ -3,44 +3,10 @@ console.log('running');
 let body = document.querySelector('body');
 // User log in state - now Current User
 // let currentUser = null;
-let currentUser = {
-  id: '3',
-  type: 'athlete',
-  attributes: {
-    name: 'Jimmy Neutron',
-    username: 'jim',
-    email: 'gotta@blast.com',
-    password_digest: 'abc123',
-    friends: [
-      {
-        id: 2,
-        name: 'Timmy Turner',
-        username: 'tim',
-        email: 'I@wish.com',
-        password_digest: 'abc123'
-      }
-    ]
-  }
-};
+let currentUser = null;
 
 // master controller for the nav and main-body
 let page;
-
-// // Navigation bar
-// let nav;
-// // main body
-// let main;
-
-// // Make a navigation bar based on the user log in state
-// // If user is logged in
-// if (currentUser) {
-//   // show logged in nav and main body
-//   nav = new LoggedInNav();
-//   main = new App();
-// } else {
-//   nav = new LandingPageNav();
-//   main = new LandingPage();
-// }
 
 document.addEventListener('DOMContentLoaded', event => {
   page = new Page();
@@ -51,6 +17,7 @@ document.addEventListener('DOMContentLoaded', event => {
     homeClickEventListener(event);
     athleteClickEventListener(event);
   });
+  temp();
 });
 
 // Handle Nav Bar 'click' Event Listeners
@@ -77,13 +44,15 @@ function navClickEventListener(event) {
     // Profile Button
     mainApp.toggleAppState('athletes');
     AthletesAdapter.getOneAthlete(currentUser.id).then(data => {
-    mainApp.athletesPage.swapState('show', data);
-    })  
+      mainApp.athletesPage.swapState('show', data);
+    });
   } else if (event.target === navApp.athleteButton) {
     // Athletes Button
     let appState = event.target.innerText;
     mainApp.toggleAppState(appState);
     mainApp.athletesPage.swapState('index', '');
+    // toggle 'add/remove friends' button states & hide current user
+    page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
   } else if (event.target === navApp.logOutButton) {
     // set the user to falsey value, null
     currentUser = null;
@@ -136,10 +105,29 @@ function homeClickEventListener(event) {
 
 function athleteClickEventListener(event) {
   let [navApp, mainApp] = [page.nav.app, page.main.app];
+  // view signed in athlete's profile
   if (event.target.classList.contains('btn-view-profile')) {
     let athleteId = event.target.dataset.athleteId;
     AthletesAdapter.getOneAthlete(athleteId).then(data => {
       mainApp.athletesPage.swapState('show', data);
-    });  
+    });
   }
+  // athletes page add/remove buttons
+  if (event.target.classList.contains('btn-add-friend')) {
+    // make request to add friend
+
+    // toggle-swap add/Remove buttons
+    page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
+  }
+  if (event.target.classList.contains('btn-remove-friend')) {
+    // make request to destroy friendship
+
+    // toggle-swap add/Remove buttons
+    page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
+  }
+}
+
+// TEMP
+function temp() {
+  document.querySelector('.athletes').lastElementChild.remove();
 }

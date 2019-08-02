@@ -20,7 +20,7 @@ class AthletesAdapter {
   static getHeaders() {
     return {
       'Content-Type': 'application/json',
-      Accept: 'application/json'
+      'Accept': 'application/json'
     };
   }
 
@@ -30,5 +30,12 @@ class AthletesAdapter {
       headers: this.getHeaders(),
       body: JSON.stringify(bodyObject)
     };
+  }
+
+  // POST to '/athletes'
+  // Take the info from a registration form
+  static async createAthlete(formInfo) {
+    const res = await fetch(this.url(), this.fetchConfig('POST', formInfo))
+    return await res.json();
   }
 }
