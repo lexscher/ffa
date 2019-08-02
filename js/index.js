@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', event => {
   body.addEventListener('click', event => {
     navClickEventListener(event);
     homeClickEventListener(event);
+    athleteClickEventListener(event);
   });
 });
 
@@ -61,6 +62,7 @@ function navClickEventListener(event) {
     // Athletes Button
     let appState = event.target.innerText;
     mainApp.toggleAppState(appState);
+    mainApp.athletesPage.swapState('index', '')
     /******** LANDING NAV EVENT HANDLERS ***********/
   } else if (event.target === navLanding.linkToRegisterButton) {
     // Link to Register Page Button
@@ -102,4 +104,16 @@ function homeClickEventListener(event) {
 
     console.log('yes');
   }
+}
+
+function athleteClickEventListener(event) {
+  let [navApp, mainApp] = [page.nav.app, page.main.app];
+  if (event.target.classList.contains('btn-view-profile')) {
+    let athleteId = event.target.dataset.athleteId
+    AthletesAdapter.getOneAthlete(athleteId)
+    .then(data => {
+      mainApp.athletesPage.swapState('show', data)
+    })
+  }
+  
 }
