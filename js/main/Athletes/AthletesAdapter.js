@@ -10,6 +10,11 @@ class AthletesAdapter {
     return await res.json();
   }
 
+  static async getOneAthlete(id) {
+    const res = await fetch(this.url() + id);
+    return await res.json();
+  }
+
   // set headers for requests
   static getHeaders() {
     return {
