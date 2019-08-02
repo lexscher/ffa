@@ -2,7 +2,7 @@
 class App {
   constructor() {
     // Grab main div
-    this.main = document.querySelector('#main');
+    this.main = document.querySelector('#app-page-container');
 
     // make default state, home
     this.state = 'home';
