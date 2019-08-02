@@ -39,10 +39,7 @@ class AthletesList {
         this.buttonViewProfile.classList.add('btn-view-profile')
         this.buttonViewProfile.innerText = 'View Profile'
         this.buttonViewProfile.dataset.athleteId = athlete.id
-        this.buttonViewProfile.addEventListener('click', event => {
-
-        })
-
+        
         // Add Friend button creation
         this.buttonAddFriend = document.createElement('button')
         this.athleteActionButtons.append(this.buttonAddFriend)

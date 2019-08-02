@@ -1,18 +1,9 @@
-// Overall Nav Bar
-class Nav {
-  constructor() {
-    this.navBar = document.querySelector('#nav-bar');
-  }
-
-  imHere() {
-    console.log("I'm here");
-  }
-}
 
 // Landing Nav Bar
-class LandingPageNav extends Nav {
-  constructor(navBar) {
-    super(navBar);
+class LandingPageNav {
+  constructor() {
+    // grab nav bar
+    this.navBar = document.querySelector('#landing-page-nav-container');
     // log in status
     this.isLoggingIn = true;
     // create elements
@@ -62,9 +53,10 @@ class LandingPageNav extends Nav {
 }
 
 // Logged In Nav Bar
-class LoggedInNav extends Nav {
-  constructor(navBar) {
-    super(navBar);
+class LoggedInNav {
+  constructor() {
+    // grab nav bar
+    this.navBar = document.querySelector('#app-page-nav-container');
     // create button elements
     this.homeButton = document.createElement('button');
     this.profileButton = document.createElement('button');
