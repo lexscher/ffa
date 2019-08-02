@@ -25,7 +25,6 @@ class App {
     // Create our pages
     this.homePage = new HomePage()
     this.athletesPage = new AthletesPage()
-    this.profilePage = new ProfilePage()
   }
 
   // toggle for the state of the app

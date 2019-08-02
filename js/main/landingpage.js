@@ -85,8 +85,8 @@ class LoginForm {
         ) {
           // set the currentUser to the athlete
           currentUser = athlete;
-          page.state = 'app'
-          page.togglePageState()
+          page.state = 'app';
+          page.togglePageState();
           // stop execution
           return;
         }
@@ -112,18 +112,46 @@ class RegistrationForm {
     this.registrationFormContainer.classList.add('registration-form-container');
     this.registrationFormContainer.innerHTML = `
   <form class="registration-form" method="get">
+    Name: <input type="text" name="name"><br>
     Username: <input type="text" name="username"><br>
+    Email: <input type="text" name="email"><br>
     Password: <input type="text" name="password"><br>
-    Email: <input type="text" name="Email"><br>
-    Password: <input type="text" name="Email"><br>
-    Confirm Password: <input type="text" name="Email"><br>
+    Confirm Password: <input type="text" name="confirm_password"><br>
     <input type="submit" value="Submit">
   </form>
   `;
     this.registrationForm = document.querySelector('.registration-form');
     this.registrationForm.addEventListener('submit', event => {
       event.preventDefault();
-      alert('registering now');
+      // confirm password
+      if (event.target.password.value !== event.target.confirm_password.value) {
+        alert("Sorry, those passwords don't match!");
+        return;
+      }
+
+      // assign values
+      // let { name, username, email, password } = event.target;
+
+      // Create object to create the user
+      let newAthlete = {
+        name: event.target.name.value,
+        username: event.target.username.value,
+        email: event.target.email.value,
+        password_digest: event.target.password.value
+      };
+
+      let response = {};
+
+      AthletesAdapter.createAthlete('POST', newAthlete).then(fetchData => {
+        // get that response from our POST request
+        response.data = { ...fetchData };
+        // If there are errors
+        let errorMessage = '|';
+        if (Object.keys(fetchData).includes('errors')) {
+          fetchData.errors.forEach(error => (errorMessage += ` ${error} |`));
+          alert(errorMessage);
+        }
+      });
     });
   }
 }
