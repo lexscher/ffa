@@ -24,6 +24,8 @@ class AthletesList {
         this.athletesListItem = document.createElement('li')
         // Append li element to the athletes list container
         this.athletesList.append(this.athletesListItem)
+        // add dataset
+        this.athletesListItem.dataset.athleteListItem = athlete.id
         // Add class name
         this.athletesListItem.classList.add('athlete-list-item')
         // Create div container for buttons 
@@ -68,5 +70,14 @@ class AthletesList {
             <img src="">
         `
         // console.log(`created ${this.athleteInfoCard}`)
+    }
+
+    // toggle for add/remove friend button
+    toggleAddOrRemoveFriendsButton() {
+        // check each athlete list item
+        this.athletesList.forEach(athleteLi => {
+            // if the list item
+
+        })
     }
 }
