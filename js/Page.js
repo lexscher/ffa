@@ -32,7 +32,7 @@ class Page {
     this.appPageContainer.id = 'app-page-container';
 
     /*--------------------------------*/
-    // set the state
+    // set the state to either 'landing' or 'app'
     this.state = 'landing';
 
     // Create the nav bars (landing page, and app)
