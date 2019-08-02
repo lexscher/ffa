@@ -1,4 +1,8 @@
 /* Button Styling */
+button {
+  cursor: pointer
+}
+
 [class*='btn'] {
   border-radius: 2%;
   padding: 0.8rem, 0.6rem;

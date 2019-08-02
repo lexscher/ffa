@@ -4,16 +4,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-weight: 250;
   font-size: 1.6rem;
   background: #11b5e4;
   color: #070102; }
 
-.nav-bar {
-  font-size: 70px;
-  padding: 5px;
-  color: #ea5317;
-  text-shadow: 3px 3px #0a3b49; }
+#main {
+  width: 100%;
+  height: 93vh; }
+
+#landing-page-container,
+#app-page-container, .home {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 h1 {
   font-family: "Montserrat", sans-serif; }
@@ -46,23 +51,21 @@ ul {
 ul.routines-list {
   border: 0.4rem, solid, #686d75; }
 
-.u-center-text {
-  text-align: center; }
-
-.u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
-
-.u-margin-bottom-medium {
-  margin-bottom: 4rem; }
-
-.u-margin-bottom-big {
-  margin-bottom: 8rem; }
-
 /* Any Hide any element that contains a class with this flag */
 [class*='--hidden'] {
   display: none !important; }
 
+form {
+  width: 10rem;
+  margin: 2rem;
+  padding: 1.5rem;
+  align-self: center;
+  background-image: linear-gradient(to left, #ea5317, #0a3b49); }
+
 /* Button Styling */
+button {
+  cursor: pointer; }
+
 [class*='btn'] {
   border-radius: 2%;
   padding: 0.8rem, 0.6rem;
@@ -85,10 +88,13 @@ ul.routines-list {
 [class*='btn--green'] {
   background-color: #26bf5b; }
 
+.routine-list-element {
+  background-color: #fff; }
+
 header {
   top: 0;
   width: 100%;
-  height: 3rem;
+  height: 7vh;
   background-color: #ea5317;
   display: flex;
   align-items: center;
