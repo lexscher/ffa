@@ -56,8 +56,10 @@ function navClickEventListener(event) {
     mainApp.homePage.swapState('index', '');
   } else if (event.target === navApp.profileButton) {
     // Profile Button
-    let appState = event.target.innerText;
-    mainApp.toggleAppState(appState);
+    mainApp.toggleAppState('athletes');
+    AthletesAdapter.getOneAthlete(currentUser.id).then(data => {
+    mainApp.athletesPage.swapState('show', data);
+    })  
   } else if (event.target === navApp.athleteButton) {
     // Athletes Button
     let appState = event.target.innerText;
@@ -119,6 +121,6 @@ function athleteClickEventListener(event) {
     let athleteId = event.target.dataset.athleteId;
     AthletesAdapter.getOneAthlete(athleteId).then(data => {
       mainApp.athletesPage.swapState('show', data);
-    });
+    });  
   }
 }
