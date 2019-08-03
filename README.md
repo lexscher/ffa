@@ -2,7 +2,7 @@
 
 This fitness app enables athletes to connect & share their workout routines.
 
-To get a better idea of how our app works, please checkout our [wireframes]('/wireframes.md')!
+To get a better idea of how our app works, please checkout our [wireframes](./wireframes.md)!
 
 #### Technologies
 
