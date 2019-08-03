@@ -1,55 +1,155 @@
-/* MAIN COLORS
-ORANGE - #EA5317
-LIGHT BLUE - #11B5E4
-BLUE - #1481BA
-GREEN - #26BF5B
-GRAY - #686D75
-*/
-
+/* MAIN COLORS */
 body {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: 'Merriweather', serif;
-}
+  align-items: center;
+  justify-content: center;
+  font-weight: 250;
+  font-size: 1.6rem;
+  background: #11b5e4;
+  color: #070102; }
 
-/* Fonts */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button,
-.btn {
-  font-family: 'Montserrat', sans-serif;
-}
+#main {
+  width: 100%;
+  height: 93vh; }
 
-/* Button Styling */
-[class*='btn'] {
-  border-radius: 2%;
-  padding: 0.8rem, 0.6rem;
-  border: 0.5rem, solid, black;
-}
-/* Delete Button */
-[class*='btn--red'] {
-  background-color: red;
-}
-/*  */
-[class*='btn--blue'] {
-  background-color: #1481ba;
-}
-[class*='btn--light-blue'] {
-  background-color: #11b5e4;
-}
+#landing-page-container,
+#app-page-container, .home {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
-[class*='btn--orange'] {
-  background-color: #ea5317;
-}
-[class*='btn--green'] {
-  background-color: #26bf5b;
-}
+h1 {
+  font-family: "Montserrat", sans-serif; }
+
+h2 {
+  font-family: "Montserrat", sans-serif; }
+
+h3 {
+  font-family: "Montserrat", sans-serif; }
+
+h4 {
+  font-family: "Montserrat", sans-serif; }
+
+h5 {
+  font-family: "Montserrat", sans-serif; }
+
+h6 {
+  font-family: "Montserrat", sans-serif; }
+
+p {
+  font-family: "Merriweather", serif; }
+
+form {
+  display: flex;
+  flex-direction: column; }
+
+ul {
+  list-style: none; }
+
+ul.routines-list {
+  border: 0.4rem, solid, #686d75; }
 
 /* Any Hide any element that contains a class with this flag */
 [class*='--hidden'] {
-  display: none;
-}
+  display: none !important; }
+
+form {
+  width: 10rem;
+  margin: 2rem;
+  padding: 1.5rem;
+  align-self: center; }
+
+input {
+  height: 1.5rem;
+  border: solid 0.4rem black; }
+
+input[type='submit'] {
+  height: 3.4rem !important; }
+
+/* Button Styling */
+button {
+  cursor: pointer;
+  height: 1.4rem;
+  padding: .4rem, .8rem; }
+
+.athlete-action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
+
+[class*='btn'] {
+  border-radius: 2%;
+  padding: 0.8rem, 0.6rem;
+  border: 0.5rem, solid, #070102; }
+
+/* Delete Button */
+[class*='btn--red'] {
+  background-color: red; }
+
+/*  */
+[class*='btn--blue'] {
+  background-color: #327b8f; }
+
+[class*='btn--light-blue'] {
+  background-color: #11b5e4; }
+
+[class*='btn--orange'] {
+  background-color: #ea5317; }
+
+[class*='btn--green'] {
+  background-color: #26bf5b; }
+
+.routine-list-element, .athlete-list-item,
+div.athlete-show-card {
+  background-color: rgba(223, 181, 104, 0.774);
+  padding: .2rem;
+  margin-bottom: .5rem;
+  border-radius: .2rem;
+  border: solid 0.2rem #070102;
+  display: flex;
+  justify-content: space-around; }
+
+.routine-list-element h3, .athlete-info-card,
+div.athlete-show-card h2 {
+  margin-right: 5rem; }
+
+.athlete-list-item {
+  flex-direction: row-reverse; }
+
+.athlete-action-buttons {
+  display: flex; }
+
+div.athlete-show-card {
+  display: flex;
+  border: solid 2px #000;
+  margin-top: 10rem; }
+
+header {
+  top: 0;
+  width: 100%;
+  height: 7vh;
+  background-color: #ea5317;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#nav-bar {
+  height: inherit;
+  width: inherit; }
+
+#landing-page-nav-container,
+#app-page-nav-container {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.home {
+  display: flex; }
+
+div.athlete-show-card {
+  display: flex !important; }

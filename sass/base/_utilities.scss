@@ -1,0 +1,4 @@
+/* Any Hide any element that contains a class with this flag */
+[class*='--hidden'] {
+  display: none!important;
+}

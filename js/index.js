@@ -2,6 +2,7 @@ console.log('running');
 // grab the body
 let body = document.querySelector('body');
 // User log in state - now Current User
+// let currentUser = null;
 let currentUser = null;
 
 // master controller for the nav and main-body
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', event => {
     homeClickEventListener(event);
     athleteClickEventListener(event);
   });
+  temp();
 });
 
 // Handle Nav Bar 'click' Event Listeners
@@ -116,11 +118,16 @@ function athleteClickEventListener(event) {
 
     // toggle-swap add/Remove buttons
     page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
-  } 
+  }
   if (event.target.classList.contains('btn-remove-friend')) {
     // make request to destroy friendship
 
-      // toggle-swap add/Remove buttons
-      page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
+    // toggle-swap add/Remove buttons
+    page.main.app.athletesPage.athletesList.toggleAddOrRemoveFriendsButton();
   }
+}
+
+// TEMP
+function temp() {
+  document.querySelector('.athletes').lastElementChild.remove();
 }

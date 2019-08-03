@@ -1,0 +1,30 @@
+{
+  "name": "ffa",
+  "version": "1.0.0",
+  "description": "Fitness app",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinLai76/ffa.git"
+  },
+  "keywords": [
+    "fitness",
+    "health",
+    "javascript",
+    "collaboration",
+    "html",
+    "css"
+  ],
+  "author": "Kevin Lai & Alexander Schelchere",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinLai76/ffa/issues"
+  },
+  "homepage": "https://github.com/KevinLai76/ffa#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

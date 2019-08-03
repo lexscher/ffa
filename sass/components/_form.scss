@@ -1,0 +1,15 @@
+form {
+  width: 10rem;
+  margin: 2rem;
+  padding: 1.5rem;
+  align-self: center;
+}
+
+input {
+  height: 1.5rem;
+  border: solid 0.4rem black;
+}
+
+input[type='submit'] {
+  height: 3.4rem !important;
+}

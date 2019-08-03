@@ -59,7 +59,7 @@ class LoginForm {
     this.loginFormContainer.innerHTML = `
     <form class="login-form" method="get">
       Username: <input type="text" name="username"><br>
-      Password: <input type="text" name="password"><br>
+      Password: <input type="password" name="password"><br>
       <input type="submit" value="Submit">
     </form>
     `;
@@ -115,8 +115,8 @@ class RegistrationForm {
     Name: <input type="text" name="name"><br>
     Username: <input type="text" name="username"><br>
     Email: <input type="text" name="email"><br>
-    Password: <input type="text" name="password"><br>
-    Confirm Password: <input type="text" name="confirm_password"><br>
+    Password: <input type="password" name="password"><br>
+    Confirm Password: <input type="password" name="confirm_password"><br>
     <input type="submit" value="Submit">
   </form>
   `;
